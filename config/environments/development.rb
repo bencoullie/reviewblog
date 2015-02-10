@@ -36,4 +36,7 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.assets.initialize_on_precompile = false
+
+  # PAPERCLIP
+  Paperclip.options[:command_path] = "/usr/bin"
 end

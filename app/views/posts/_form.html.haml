@@ -1,9 +1,19 @@
 = simple_form_for(@post) do |f|
-  = f.error_notification
+	= f.error_notification
 
-  .form-inputs
-    = f.input :title
-    = f.input :content
+	.form-inputs
+		= f.input :title
+		= f.input :content
 
-  .form-actions
-    = f.button :submit
+		- if @post.background.exists?
+			= f.label :background
+			= f.file_field :background, class: "form-control"
+			= image_tag @staff_member.background.url(:thumb)
+			%br
+		-else
+			= f.label :background
+			= f.file_field :background, class: "form-control"
+			%br
+
+	.form-actions
+		= f.button :submit

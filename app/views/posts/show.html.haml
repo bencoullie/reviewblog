@@ -13,6 +13,8 @@
   %b Read time:
   = @post.reading_time
   mins
+%p
+  =image_tag @post.background.url(:full)
 
 = link_to 'Edit', edit_post_path(@post)
 \|
