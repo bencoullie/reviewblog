@@ -39,4 +39,11 @@ Rails.application.configure do
 
   # PAPERCLIP
   Paperclip.options[:command_path] = "/usr/bin"
+
+  # ENABLE EMAIL LOCALLY
+  config.action_mailer.default_url_options = { host: 'localhost' }
+
+  # ENABLE LOCAL EMAIL OPENING
+  config.action_mailer.delivery_method = :letter_opener
+
 end

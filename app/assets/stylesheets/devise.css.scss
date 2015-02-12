@@ -1,11 +1,19 @@
 @import 'variables';
 
-// OVERALL FORM
+// GENERAL FORM CSS
 
 .authform {
   padding-top: 30px;
   max-width: 375px;
   margin: 0 auto;
+}
+
+.grey-hint {
+  font-size: 14px;
+  color: $seconday-grey;
+  margin-top: -7px;
+  margin-bottom: 12px;
+  font-weight: 300;
 }
 
 // LOGIN TEXT INPUT
@@ -18,7 +26,7 @@
   vertical-align: top;
 }
 
-.input__field, .input__label {
+.input__field, .input__label, .grey-hint {
   font-family: 'Roboto', sans-serif;
 }
 
@@ -235,4 +243,10 @@ input:hover, input:focus {
       transition: border-bottom 40ms ease-out;
     }
   }
+}
+
+// SHITTY CHROME AUTOFILL OVERIDE
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
 }

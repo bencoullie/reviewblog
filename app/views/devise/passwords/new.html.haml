@@ -1,0 +1,18 @@
+.authform
+  = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :role => 'form'}) do |f|
+    %h1 Password Reset
+    %p.grey-hint We'll send password reset instructions.
+    = devise_error_messages!
+    %hr.dashed
+    .form-group
+      %span.input.input--isao
+        = f.email_field :email, class: 'input__field input__field--isao', id: 'input-38', :type => "text"
+        %label.input__label.input__label--isao{"data-content" => "Email", :for => "input-38"}
+          %span.input__label-content.input__label-content--isao Email
+    %br
+    = f.submit 'Reset Password', id: 'primary-button'
+    .form-group.grey-links
+      - if devise_mapping.registerable?
+        = link_to 'Sign up', new_registration_path(resource_name), class: 'left'
+      - if devise_mapping.registerable?
+        = link_to 'Sign in', new_user_session_path, class: 'right'
