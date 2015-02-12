@@ -1,16 +1,24 @@
+@import 'variables';
+
 @font-face {
     font-family: 'RomanaBTBold';
     src: asset-url('RomanaBTBold.ttf') format('truetype')
 }
 
-h1, h2, h3, h4, p {
-  color: #222;
+// SITE WIDE STYLING
+h2, h3, h4, p {
+  color: $paragraph-grey;
 }
 
-blockquote {
-  color: #333;
+body {
+  h1 {
+    color: $primary-grey;
+    font-size: 48px;
+    font-family: 'RomanaBTBold', sans-serif;
+  }
 }
 
+// POST SPECIFIC STYLING
 .posts {
   h3 {
     font-family: 'RomanaBTBold', sans-serif;
@@ -43,10 +51,14 @@ blockquote {
 
   u {
     text-decoration: none;
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid $tertiary-grey;
   }
 
   b {
     font-weight: 500;
+  }
+
+  blockquote {
+    color: $lighter-paragraph-grey;
   }
 }

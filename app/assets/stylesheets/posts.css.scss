@@ -5,29 +5,24 @@
 .displayable, .editable {
   width: 800px;
   margin: 0 auto;
+
   a {
     border-bottom: 5px solid #eee;
     text-decoration: none;
     color: #222;
-    -webkit-transition: border-bottom 30ms ease-out;
-    -moz-transition: border-bottom 30ms ease-out;
-    -o-transition: border-bottom 30ms ease-out;
-    transition: border-bottom 30ms ease-out;
+    -webkit-transition: border-bottom 40ms ease-out;
+    -moz-transition: border-bottom 40ms ease-out;
+    -o-transition: border-bottom 40ms ease-out;
+    transition: border-bottom 40ms ease-out;
     &:hover {
       text-decoration: none;
       color: #222;
       border-bottom: 5px solid #dfdfdf;
-      -webkit-transition: border-bottom 30ms ease-out;
-      -moz-transition: border-bottom 30ms ease-out;
-      -o-transition: border-bottom 30ms ease-out;
-      transition: border-bottom 30ms ease-out;
+      -webkit-transition: border-bottom 40ms ease-out;
+      -moz-transition: border-bottom 40ms ease-out;
+      -o-transition: border-bottom 40ms ease-out;
+      transition: border-bottom 40ms ease-out;
     }
-  }
-}
-
-.editable {
-  &:focus {
-    outline:0;
   }
 }
 

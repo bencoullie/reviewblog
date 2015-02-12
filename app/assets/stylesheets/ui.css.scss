@@ -1,0 +1,18 @@
+@import 'variables';
+
+body {
+  * {
+    &:focus {
+      outline:0;
+    }
+  }
+
+  hr {
+    border-top: 2px solid #eeeeee;
+  }
+
+  hr.dashed {
+    border-top: 2px dashed #eeeeee;
+    margin-top: 10px;
+  }
+}
