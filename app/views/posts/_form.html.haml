@@ -3,6 +3,7 @@
 
 	.form-inputs
 		= f.input :title
+		= f.input :subtitle
 		.field
 			- if current_page?(controller: 'posts', action: 'new')
 				= f.label :content

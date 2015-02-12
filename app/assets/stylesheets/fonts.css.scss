@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'RomanaBTBold';
+    src: asset-url('RomanaBTBold.ttf') format('truetype')
+}
+
+h1, h2, h3, h4, p {
+  color: #222;
+}
+
+blockquote {
+  color: #333;
+}
+
+.posts {
+  h3 {
+    font-family: 'RomanaBTBold', sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+    margin-bottom: 30px;
+  }
+
+  h4 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+  }
+
+  p, blockquote {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+  }
+
+  p {
+    margin-bottom: 30px;
+  }
+
+  blockquote {
+    font-style: italic;
+    padding: 20px 20px;
+    margin: 20px 0 28px;
+  }
+
+  u {
+    text-decoration: none;
+    border-bottom: 2px solid #eee;
+  }
+
+  b {
+    font-weight: 500;
+  }
+}

@@ -1,21 +1,29 @@
-%p#notice= notice
+- if @post.background.exists?
+  :scss
+    .post-landing {
+      background-image: url(#{@post.background.url(:full)}); background-size: cover; background-position: center;
+    }
+  .post-landing
 
 %p
   %b Title:
   = @post.title
 %p
+  %b Subtitle:
+  = @post.subtitle
+%p
   %b Author Email:
   = @post.user.email
 %p
   %b Content:
-  =raw @post.content
+  .displayable
+    =raw @post.content
 %p
   %b Read time:
   = @post.reading_time
   mins
-%p
-  =image_tag @post.background.url(:full)
 
-= link_to 'Edit', edit_post_path(@post)
-\|
-= link_to 'Back', posts_path
+- if current_user.id = @post.user.id or current_user.admin?
+  = link_to 'Edit', edit_post_path(@post)
+  \|
+  = link_to 'Back', posts_path
