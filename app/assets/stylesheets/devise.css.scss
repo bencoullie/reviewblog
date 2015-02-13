@@ -188,7 +188,7 @@ input:hover, input:focus {
   font-weight:300;
 }
 
-#primary-button:hover{
+#primary-button:hover, #primary-button:focus {
   background-color: $primary-grey;
   border: $primary-grey solid 3px;
   color: #fff;
