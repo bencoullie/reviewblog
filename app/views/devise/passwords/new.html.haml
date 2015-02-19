@@ -10,7 +10,7 @@
         %label.input__label.input__label--isao{"data-content" => "Email", :for => "input-38"}
           %span.input__label-content.input__label-content--isao Email
     %br
-    = f.submit 'Reset Password', id: 'primary-button'
+    = f.submit 'Reset Password', class: 'primary-button'
     .form-group.grey-links
       - if devise_mapping.registerable?
         = link_to 'Sign up', new_registration_path(resource_name), class: 'left'

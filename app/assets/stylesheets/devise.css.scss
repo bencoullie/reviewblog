@@ -16,6 +16,10 @@
   font-weight: 300;
 }
 
+.following-section {
+  margin-top: 30px;
+}
+
 // LOGIN TEXT INPUT
 
 .input {
@@ -172,7 +176,7 @@ input:hover, input:focus {
   background-color:white;
 }
 
-#primary-button{
+.primary-button {
   font-family: 'Roboto', sans-serif;
   width: 100%;
   cursor:pointer;
@@ -188,13 +192,13 @@ input:hover, input:focus {
   font-weight:300;
 }
 
-#primary-button:hover, #primary-button:focus {
+.primary-button:hover, .primary-button:focus {
   background-color: $primary-grey;
   border: $primary-grey solid 3px;
   color: #fff;
 }
 
-#primary-button:active {
+.primary-button:active {
   -moz-box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.22);;
   -webkit-box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.22);;
   box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.22);;

@@ -1,0 +1,36 @@
+.authform
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f|
+    %h1
+      Edit
+      = resource_name.to_s.humanize
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %p.grey-hint yCurrently waiting confirmation for: #{resource.unconfirmed_email}
+    - else
+      %p.grey-hint Ignore the fields you don't want to change.
+    = devise_error_messages!
+    %hr.dashed
+    .form-group
+      %span.input.input--isao
+        = f.email_field :email, class: 'input__field input__field--isao', id: 'input-38', :type => "text"
+        %label.input__label.input__label--isao{"data-content" => "Email", :for => "input-38"}
+          %span.input__label-content.input__label-content--isao Email
+      %span.input.input--isao
+        = f.password_field :password, class: 'input__field input__field--isao', id: 'input-39', type: "password"
+        %label.input__label.input__label--isao{"data-content" => "New password", :for => "input-39"}
+          %span.input__label-content.input__label-content--isao New password
+      %span.input.input--isao
+        = f.password_field :password_confirmation, class: 'input__field input__field--isao', id: 'input-39', type: "password"
+        %label.input__label.input__label--isao{"data-content" => "Repeat new password", :for => "input-39"}
+          %span.input__label-content.input__label-content--isao New password
+      %span.input.input--isao
+        = f.password_field :current_password, class: 'input__field input__field--isao', id: 'input-39', type: "password"
+        %label.input__label.input__label--isao{"data-content" => "Current password", :for => "input-39"}
+          %span.input__label-content.input__label-content--isao Current password
+    %br
+    = f.submit 'Update', class: 'primary-button'
+
+  %h1.following-section Cancel Account
+  %p.grey-hint See you space cowboy...
+  %hr.dashed
+  %br
+  = button_to "Cancel", registration_path(resource_name), :data => { :confirm => "Are you sure? This cancellation is irreversible." }, :method => :delete, class: 'primary-button'
