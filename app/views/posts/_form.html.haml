@@ -10,10 +10,14 @@
 				%br
 				= f.hidden_field :content, html: { id: "content" }
 				.editable{"data-field-id" => "content"}
-					%h1 Go ahead,
-					%p Write that review of yours in here.
+					%h3 Primary heading
+					%h4 Secondary heading
+					%p Paragraph
 					%blockquote
-						PS: Highlight text to format.
+						"Quote"
+					%p
+						%b NOTE
+						\: Simply highlight to edit.
 			- else
 				= f.label :content
 				%br

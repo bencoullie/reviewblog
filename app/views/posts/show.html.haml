@@ -7,21 +7,17 @@
     .post-titles
       %h1= @post.title
       %h4= @post.subtitle
+    .post-details.clearfix
+      %h5
+        = @post.reading_time
+        minute read
+      %h5
+        = @post.user.email
 
 .full-divider
-        
+
 .displayable
   =raw @post.content
-
-
-%p
-  %b Author Email:
-  = @post.user.email
-%p
-  %b Read time:
-  = @post.reading_time
-  mins
-
 
 - if user_signed_in? and current_user.id = @post.user.id or user_signed_in? and current_user.admin?
   = link_to 'Edit', edit_post_path(@post)

@@ -10,11 +10,22 @@ h2, h3, h4, p {
   color: $paragraph-grey;
 }
 
+
+
 body {
   h1 {
     color: $primary-grey;
     font-size: 48px;
     font-family: 'RomanaBTBold', sans-serif;
+  }
+
+  h5 {
+    color: $secondary-grey;
+    display: inline;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #fff;
+    font-size: 18px;
   }
 }
 
