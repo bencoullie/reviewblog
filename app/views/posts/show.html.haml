@@ -4,20 +4,19 @@
       background-image: url(#{@post.background.url(:full)}); background-size: cover; background-position: center;
     }
   .post-landing
+    .post-titles
+      %h1= @post.title
+      %h4= @post.subtitle
 
-%p
-  %b Title:
-  = @post.title
-%p
-  %b Subtitle:
-  = @post.subtitle
+.full-divider
+        
+.displayable
+  =raw @post.content
+
+
 %p
   %b Author Email:
   = @post.user.email
-%p
-  %b Content:
-  .displayable
-    =raw @post.content
 %p
   %b Read time:
   = @post.reading_time

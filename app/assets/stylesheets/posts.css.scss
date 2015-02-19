@@ -1,10 +1,8 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables';
 
 .displayable, .editable {
   width: 800px;
-  margin: 0 auto;
+  margin: 30px auto 0;
 
   a {
     border-bottom: 5px solid #eee;
@@ -26,13 +24,34 @@
   }
 }
 
+.full-divider {
+  border-top: 5px solid $secondary-grey;
+}
+
 .post-landing {
-  height: 100vh;
   position:relative;
+  height: 100vh;
   right: 0;
   left: 0;
   -webkit-box-shadow: inset 0px -52px 273px 10px rgba(51,51,51,0.3);
   -moz-box-shadow: inset 0px -52px 273px 10px rgba(51,51,51,0.3);
   box-shadow: inset 0px -52px 273px 10px rgba(51,51,51,0.3);
-  border-bottom: 5px solid #eee;
+
+  .post-titles {
+    position: relative;
+    text-align: center;
+    top: 45%;
+    h1, h4 {
+      color: #fff;
+    }
+    h1 {
+      text-shadow: 0px 0px 6px rgba(10, 10, 10, 0.7);
+      font-size: 60px;
+      margin-top: 0;
+    }
+    h4 {
+      text-shadow: 0px 0px 3px rgba(10, 10, 10, 0.7);
+      font-size: 30px;
+    }
+  }
 }
