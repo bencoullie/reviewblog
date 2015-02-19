@@ -16,3 +16,13 @@ body {
     margin-top: 10px;
   }
 }
+
+// PROGRESS BAR
+
+#nprogress .bar {
+  background: $primary-grey !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px $primary-grey, 0 0 5px $primary-grey;
+}

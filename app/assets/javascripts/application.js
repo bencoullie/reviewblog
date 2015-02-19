@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require medium-editor
+//= require nprogress
+//= require nprogress-turbolinks
 //= require_tree .

@@ -31,6 +31,9 @@ gem 'seed_dump'
 # PAPERCLIP
 gem "paperclip", "~> 4.2"
 
+# LOADING BAR
+gem 'nprogress-rails'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
