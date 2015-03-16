@@ -37,12 +37,17 @@ gem 'nprogress-rails'
 # FONT AWESOME ICONS
 gem "font-awesome-rails"
 
-group :development do
+group :development, :test do
+
+  # BETTER ERRORS
   gem 'better_errors'
+
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'html2haml'
   gem 'quiet_assets'
   gem 'rails_layout'
+
+  # LOCAL LETTER CATCHER
   gem "letter_opener"
 end
 

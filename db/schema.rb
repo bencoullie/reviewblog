@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150212235552) do
+ActiveRecord::Schema.define(version: 20150316210314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150212235552) do
     t.integer  "background_file_size"
     t.datetime "background_updated_at"
     t.string   "subtitle"
+    t.integer  "rating"
   end
 
   create_table "users", force: true do |t|
