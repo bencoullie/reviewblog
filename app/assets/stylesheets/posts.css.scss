@@ -24,6 +24,11 @@
   }
 }
 
+.posts main {
+  position: relative;
+  top: -85px;
+}
+
 .full-divider {
   border-top: 5px solid $secondary-grey;
 }

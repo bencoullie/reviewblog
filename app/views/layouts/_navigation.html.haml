@@ -1,13 +1,50 @@
 -# navigation styled for Bootstrap 3.0
-%nav.navbar.navbar-default.navbar-fixed-top
-  .container-fluid
-    .navbar-header
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      = link_to 'Home', root_path, class: 'navbar-brand'
-    .collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        = render 'layouts/navigation_links'
+-# %nav.navbar.navbar-default.navbar-fixed-top
+-#   .container-fluid
+-#     .navbar-header
+-#       %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+-#         %span.sr-only Toggle navigation
+-#         %span.icon-bar
+-#         %span.icon-bar
+-#         %span.icon-bar
+-#       = link_to 'Home', root_path, class: 'navbar-brand'
+-#     .collapse.navbar-collapse
+-#       %ul.nav.navbar-nav
+-#         = render 'layouts/navigation_links'
+
+.tabs.tabs-style-underline
+  %nav
+    %ul
+      %li{class: ('tab-current' if current_page?(root_path))}
+        = link_to root_path, class: "icon pe-7s-home" do
+          %span Home
+
+      %li{class: ('tab-current' if current_page?(posts_path))}
+        = link_to posts_path, class: "icon pe-7s-music" do
+          %span Reviews
+
+      - if user_signed_in?
+        %li{class: ('tab-current' if current_page?(new_post_path))}
+          = link_to new_post_path, class: "icon pe-7s-pen", "data-no-turbolink" => "" do
+            %span Write a Review
+      -else
+        %li
+          = link_to new_user_session_path, class: "icon pe-7s-pen" do
+            %span Write a Review
+      - if user_signed_in?
+        %li{class: ('tab-current' if current_page?(edit_user_registration_path))}
+          = link_to edit_user_registration_path, class: "icon pe-7s-config" do
+            %span Settings
+      - else
+        %li{class: ('tab-current' if current_page?(new_user_registration_path))}
+          = link_to new_user_registration_path, class: "icon pe-7s-rocket" do
+            %span Sign up
+
+      - if user_signed_in?
+        %li{class: ('tab-current' if current_page?(destroy_user_session_path))}
+          = link_to destroy_user_session_path, class: "icon pe-7s-power", :method=>'delete' do
+            %span Sign out
+      - else
+        %li{class: ('tab-current' if current_page?(new_user_session_path))}
+          = link_to new_user_session_path, class: "icon pe-7s-key" do
+            %span Sign in

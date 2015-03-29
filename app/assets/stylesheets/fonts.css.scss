@@ -5,6 +5,11 @@
     src: asset-url('RomanaBTBold.ttf') format('truetype')
 }
 
+@font-face {
+    font-family: 'Pe-icon-7-stroke';
+    src: asset-url('Pe-icon-7-stroke.ttf') format('truetype')
+}
+
 // SITE WIDE STYLING
 h2, h3, h4, p {
   color: $paragraph-grey;

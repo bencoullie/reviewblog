@@ -17,4 +17,5 @@
 //= require medium-editor
 //= require nprogress
 //= require nprogress-turbolinks
+//= require navtabs
 //= require_tree .
