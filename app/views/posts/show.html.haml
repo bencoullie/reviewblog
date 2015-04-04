@@ -7,6 +7,7 @@
     .post-titles
       %h1= @post.title
       %h4= @post.subtitle
+
     .post-details.clearfix
       %h5
         = @post.reading_time
@@ -18,6 +19,10 @@
 
 .displayable
   =raw @post.content
+
+  %p
+    Tags:
+    = @post.tag_list
 
 - if user_signed_in? and current_user.id = @post.user.id or user_signed_in? and current_user.admin?
   = link_to 'Edit', edit_post_path(@post)

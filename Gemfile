@@ -10,14 +10,22 @@ gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
-gem 'bootstrap-sass'
 gem 'devise'
-gem 'haml-rails'
-gem 'pg'
-gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'unicorn'
 gem 'unicorn-rails'
+
+# DATABASE
+gem 'pg'
+
+# SASS
+gem 'bootstrap-sass'
+
+# HAML
+gem 'haml-rails'
+
+# FORMS
+gem 'simple_form'
 
 # WYSIWYG
 gem 'medium-editor-rails'
@@ -34,23 +42,28 @@ gem "paperclip", "~> 4.2"
 # LOADING BAR
 gem 'nprogress-rails'
 
+# TAGGING
+gem 'acts-as-taggable-on', '~> 3.4'
+
 # FONT AWESOME ICONS
 gem "font-awesome-rails"
 
+# DEVELOPMENT AND TESTS ONLY
 group :development, :test do
 
   # BETTER ERRORS
   gem 'better_errors'
-
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'html2haml'
   gem 'quiet_assets'
   gem 'rails_layout'
-
-  # LOCAL LETTER CATCHER
   gem "letter_opener"
+
 end
 
+# PRODUCTION ONLY
 group :production do
+
   gem 'rails_12factor'
+  
 end

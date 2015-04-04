@@ -4,13 +4,19 @@ class PostsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @posts = Post.all
 
     if user_signed_in?
       @otherposts = Post.where.not(user_id: current_user.id)
     else
       @otherposts = Post.all
     end
+
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag])
+    else
+      @posts = Post.all
+    end
+
   end
 
   def show
@@ -46,6 +52,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :content, :read_time, :user_id, :background, :subtitle)
+      params.require(:post).permit(:title, :content, :read_time, :user_id, :background, :subtitle, :tag_list)
     end
 end
