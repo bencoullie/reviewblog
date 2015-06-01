@@ -1,46 +1,115 @@
+-# FORM START
 = simple_form_for(@post) do |f|
 	= f.error_notification
 
+	- if @post.background.exists?
+		:scss
+			.post-landing {
+				background-image: url(#{@post.background.url(:full)}); background-size: cover; background-position: center;
+			}
 	.form-inputs
-		= f.input :title
-		= f.input :subtitle
-		= f.label :tag_list, "Tags (separated by commas)"
-		%br/
-		= f.text_field :tag_list
-		.field
-			- if current_page?(controller: 'posts', action: 'new')
-				= f.label :content
-				%br
-				= f.hidden_field :content, html: { id: "content" }
-				.editable{"data-field-id" => "content"}
-					%h3 Primary heading
-					%h4 Secondary heading
-					%p Paragraph
-					%blockquote
-						"Quote"
-					%p
-						%b NOTE
-						\: Simply highlight to edit.
-			- else
-				= f.label :content
-				%br
-				= f.hidden_field :content, html: { id: "content" }
-				.editable{"data-field-id" => "content"}
-					=raw @post.content
-		%br
+		.post-landing
+			.post-titles
+				%h1= f.input :title
+				%h4= f.input :subtitle
 
-		- if @post.background.exists?
-			= f.label :background
-			= f.file_field :background, class: "form-control"
-			= image_tag @post.background.url(:thumb)
-			%br
-		-else
-			= f.label :background
-			= f.file_field :background, class: "form-control"
-			%br
+			.post-details.clearfix
+				%h5
+					Reading time: to be calculated
+				%h5
+					Change BG Here
+					- if @post.background.exists?
+						= f.label :background
+						= f.file_field :background, class: "form-control"
+						= image_tag @post.background.url(:thumb)
+						%br
+					-else
+						= f.label :background
+						= f.file_field :background, class: "form-control"
+						%br
+
+		.full-divider
+
+		.displayable
+			.field
+				- if current_page?(controller: 'posts', action: 'new')
+					= f.label :content
+					%br
+					= f.hidden_field :content, html: { id: "content" }
+					.editable{"data-field-id" => "content"}
+						%h3 Primary heading
+						%h4 Secondary heading
+						%p Paragraph
+						%blockquote
+							"Quote"
+						%p
+							%b NOTE
+							\: Simply highlight to edit.
+				- else
+					= f.label :content
+					%br
+					= f.hidden_field :content, html: { id: "content" }
+					.editable{"data-field-id" => "content"}
+						=raw @post.content
+
+			%p
+				Tags:
+				= @post.tag_list
 
 	.form-actions
 		= f.button :submit
+
+-# - if user_signed_in? and current_user.id = @post.user.id or user_signed_in? and current_user.admin?
+-# 	= link_to 'Edit', edit_post_path(@post)
+-# 	|
+-# 	= link_to 'Back', posts_path
+
+-# END
+
+-#
+-# = simple_form_for(@post) do |f|
+-# 	= f.error_notification
+-#
+-# 	.form-inputs
+-# 		= f.input :title
+-# 		= f.input :subtitle
+-# 		= f.label :tag_list, "Tags (separated by commas)"
+-# 		%br/
+-# 		= f.text_field :tag_list
+-# 		.field
+-# 			- if current_page?(controller: 'posts', action: 'new')
+-# 				= f.label :content
+-# 				%br
+-# 				= f.hidden_field :content, html: { id: "content" }
+-# 				.editable{"data-field-id" => "content"}
+-# 					%h3 Primary heading
+-# 					%h4 Secondary heading
+-# 					%p Paragraph
+-# 					%blockquote
+-# 						"Quote"
+-# 					%p
+-# 						%b NOTE
+-# 						\: Simply highlight to edit.
+-# 			- else
+-# 				= f.label :content
+-# 				%br
+-# 				= f.hidden_field :content, html: { id: "content" }
+-# 				.editable{"data-field-id" => "content"}
+-# 					=raw @post.content
+-# 		%br
+-#
+-# 		- if @post.background.exists?
+-# 			= f.label :background
+-# 			= f.file_field :background, class: "form-control"
+-# 			= image_tag @post.background.url(:thumb)
+-# 			%br
+-# 		-else
+-# 			= f.label :background
+-# 			= f.file_field :background, class: "form-control"
+-# 			%br
+-#
+-# 	.form-actions
+-# 		= f.button :submit
 
 :javascript
 	var editor = new MediumEditor('.editable');
