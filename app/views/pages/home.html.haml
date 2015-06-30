@@ -13,7 +13,8 @@
 						.well
 							%p
 								written by:
-								= post.user.email
+								= link_to post.user do
+									= post.user.email
 								on
 								= post.created_at.strftime('%B %Y')
 								%br
