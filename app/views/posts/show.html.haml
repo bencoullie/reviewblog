@@ -13,7 +13,8 @@
         = @post.reading_time
         minute read
       %h5
-        = @post.user.email
+        = link_to @post.user, class: "post_username" do
+          = @post.user.email
 
 .full-divider
 

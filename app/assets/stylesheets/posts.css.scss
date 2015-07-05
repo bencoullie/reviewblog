@@ -24,6 +24,19 @@
   }
 }
 
+.post_username {
+  color: #fff;
+  &:hover {
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+  }
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
 .posts main {
   position: relative;
   top: -85px;

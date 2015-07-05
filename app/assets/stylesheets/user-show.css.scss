@@ -6,7 +6,7 @@ $black: #333;
 $active: $primary-grey;
 
 .users.show ul, li {
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 	list-style: none;
 }
@@ -19,6 +19,7 @@ $active: $primary-grey;
   	fill: rgba($black, .5);
 	margin-right: 20px;
 	transition: all .2s ease-out;
+	svg {width: 100%; height: auto; margin: 0 auto;}
 }
 
 .usericon.active {

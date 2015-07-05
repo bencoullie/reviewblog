@@ -17,25 +17,25 @@
           %svg{:viewbox => "0 0 32 32"}
             %g{:filter => ""}
               %use{"xlink:href" => "#shopping-cart"}
-        Choose
+        Intro
       %li.pay
         .usericon
           %svg{:viewbox => "0 0 32 32"}
             %g{:filter => ""}
               %use{"xlink:href" => "#credit-card"}
-        Pay
+        About
       %li.wrap
         .usericon
           %svg{:viewbox => "0 0 32 32"}
             %g{:filter => ""}
               %use{"xlink:href" => "#gift"}
-        Wrap
+        Stats
       %li.ship
         .usericon
           %svg{:viewbox => "0 0 32 32"}
             %g{:filter => ""}
               %use{"xlink:href" => "#package"}
-        Ship
+        Contact
   #border
     #line.one
   #right-side
@@ -44,7 +44,8 @@
         %svg{:viewbox => "0 0 32 32"}
           %g{:filter => ""}
             %use{"xlink:href" => "#shopping-cart"}
-      %h1 Choose your gift
+      %h1
+        = @user.email
       %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at viverra est, eu finibus mauris. Quisque tempus vestibulum fringilla. Morbi tortor eros, sollicitudin eu arcu sit amet, aliquet sagittis dolor.
     #second
       .usericon.big
