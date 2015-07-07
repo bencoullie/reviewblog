@@ -30,6 +30,7 @@ $active: $primary-grey;
 	width: 64px;
 	height: 64px;
 	fill: rgba($black, .5);;
+	margin-right: 0;
 }
 
 #wrapper {
@@ -154,7 +155,7 @@ $active: $primary-grey;
 		}
 
 		p {
-			color: $black;
+			color: #777;
 			font-weight: 500;
 			padding-left: 30px;
 			padding-right: 30px;

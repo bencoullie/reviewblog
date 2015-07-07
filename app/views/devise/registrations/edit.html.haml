@@ -15,6 +15,10 @@
         %label.input__label.input__label--isao{"data-content" => "Email", :for => "input-38"}
           %span.input__label-content.input__label-content--isao Email
       %span.input.input--isao
+        = f.text_field :username, class: 'input__field input__field--isao', id: 'input-40', :type => "text"
+        %label.input__label.input__label--isao{"data-content" => "Username", :for => "input-40"}
+          %span.input__label-content.input__label-content--isao Username
+      %span.input.input--isao
         = f.password_field :password, class: 'input__field input__field--isao', id: 'input-39', type: "password"
         %label.input__label.input__label--isao{"data-content" => "New password", :for => "input-39"}
           %span.input__label-content.input__label-content--isao New password
