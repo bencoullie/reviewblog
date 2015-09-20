@@ -1,6 +1,6 @@
 @import 'variables';
 
-.displayable, .editable {
+.displayable {
   width: 800px;
   margin: 40px auto 0;
 
@@ -20,6 +20,37 @@
       -moz-transition: border-bottom 40ms ease-out;
       -o-transition: border-bottom 40ms ease-out;
       transition: border-bottom 40ms ease-out;
+    }
+  }
+}
+
+.posts.new, .posts.edit {
+    .post-landing {
+      top: 14px;
+      background: url(http://s27.postimg.org/jckhsreht/1392225140189.png);
+    }
+
+    .post-landing .post-details h5:last-child {
+      top: -40px;
+    }
+
+    input[type="file"] {
+      margin-top: 6px;
+    }
+
+    .full-divider {
+      margin-top: 14px;
+  }
+
+  .controls {
+    * {
+      text-shadow: 0px 0px 6px rgba(10, 10, 10, 0.6);
+    }
+    input {
+      background-color: rgba(255, 255, 255, 0.0);
+      text-align: center;
+      border: 0;
+      width: 100%;
     }
   }
 }

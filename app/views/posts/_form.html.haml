@@ -4,28 +4,32 @@
 
 	- if @post.background.exists?
 		:scss
-			.post-landing {
+			.posts.new .post-landing, .posts.edit div.post-landing {
 				background-image: url(#{@post.background.url(:full)}); background-size: cover; background-position: center;
 			}
 	.form-inputs
 		.post-landing
 			.post-titles
-				%h1= f.input :title
-				%h4= f.input :subtitle
+				%h1= f.input :title, placeholder: "Write your title here", label: false
+				%h4= f.input :subtitle, placeholder: "And... write the subtitle here (if you want one)", label: false
 
 			.post-details.clearfix
 				%h5
 					Reading time: to be calculated
 				%h5
-					Change BG Here
-					- if @post.background.exists?
-						= f.label :background
-						= f.file_field :background, class: "form-control"
-						= image_tag @post.background.url(:thumb)
-						%br
-					-else
-						= f.label :background
-						= f.file_field :background, class: "form-control"
+					= f.file_field :background, label: 'Upload Attachment'
+					.input-append
+						%input#file-display.input-large.uneditable-input{:type => "text", disabled: "disabled", placeholder: "Upload background image"}
+							%a#upload-btn
+								.icon.pe-7s-photo
+
+					-# - if @post.background.exists?
+					-# 	= f.file_field :background, class: "form-control", label: false, input_html: { hidden: true }
+					-# 	-# = image_tag @post.background.url(:thumb)
+					-# 	%br
+					-# -else
+					-# 	= f.file_field :background, class: "form-control",  label: false
+
 						%br
 
 		.full-divider
@@ -33,7 +37,6 @@
 		.displayable
 			.field
 				- if current_page?(controller: 'posts', action: 'new')
-					= f.label :content
 					%br
 					= f.hidden_field :content, html: { id: "content" }
 					.editable{"data-field-id" => "content"}
@@ -56,8 +59,8 @@
 				Tags:
 				= @post.tag_list
 
-	.form-actions
-		= f.button :submit
+			.form-actions
+				= f.button :submit
 
 -# - if user_signed_in? and current_user.id = @post.user.id or user_signed_in? and current_user.admin?
 -# 	= link_to 'Edit', edit_post_path(@post)

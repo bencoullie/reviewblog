@@ -17,6 +17,50 @@ body {
   }
 }
 
+// FILE UPLOAD STYLING
+
+input#post_background {
+    display: none;
+}
+
+.input-append {
+  position: absolute;
+  display: inline;
+  text-shadow: 0px 0px 4px rgba(10, 10, 10, 0.8);
+  padding-right: 20px;
+  right: 25px;
+  top: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #fff;
+  font-size: 18px;
+  text-align: right;
+
+  .uneditable-input {
+    background-color: rgba(255,255,255,0.0);
+    border: 0px inset;
+    display: inline-block;
+    padding-right: 55px;
+    text-align: right;
+  }
+
+  #upload-btn {
+    display: inline-block;
+    position: absolute;
+    top: -53px;
+    right: -7px;
+
+    .icon {
+      font-size: 350%;
+
+      &:before {
+        margin: 0;
+      }
+    }
+  }
+}
+
+
 // PROGRESS BAR
 
 #nprogress .bar {
