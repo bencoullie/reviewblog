@@ -1,8 +1,47 @@
 @import 'variables';
 
+.posts.show {
+  height: calc(100vh - 85px);
+}
+
 .displayable {
   width: 800px;
   margin: 40px auto 0;
+
+  .tags {
+    display: inline-block;
+  }
+
+  .edit-post {
+    text-align: right;
+    float: right;
+    display: inline-block;
+    margin-top: -10px;
+    a {
+      border-bottom: none;
+      color: $secondary-grey;
+      text-decoration: none;
+      -webkit-transition: color 0.2s;
+      transition: color 0.2s;
+      &:hover, & *:hover {
+        border-bottom: none;
+        -webkit-transition: color 0.2s;
+        transition: color 0.2s;
+        color: $primary-grey;
+        .icon {
+          -webkit-transition: color 0.2s;
+          transition: color 0.2s;
+          color: $primary-grey;
+        }
+      }
+      .icon {
+        font-size: 30px;
+        -webkit-transition: color 0.2s;
+        transition: color 0.2s;
+        color: $secondary-grey;
+      }
+    }
+  }
 
   a {
     border-bottom: 5px solid #eee;
@@ -52,6 +91,12 @@
       border: 0;
       width: 100%;
     }
+  }
+}
+
+.form-actions {
+  .secondary-button {
+    margin-left: 10px;
   }
 }
 

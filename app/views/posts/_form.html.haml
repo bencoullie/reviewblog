@@ -49,7 +49,6 @@
 							%b NOTE
 							\: Simply highlight to edit.
 				- else
-					= f.label :content
 					%br
 					= f.hidden_field :content, html: { id: "content" }
 					.editable{"data-field-id" => "content"}
@@ -59,8 +58,13 @@
 				Tags:
 				= @post.tag_list
 
-			.form-actions
-				= f.button :submit
+			- if current_page?(controller: 'posts', action: 'new')
+				.form-actions
+					= f.button :submit
+			- else
+				.form-actions
+					= f.button :submit
+					= link_to 'Go to post', @post, class: "secondary-button"
 
 -# - if user_signed_in? and current_user.id = @post.user.id or user_signed_in? and current_user.admin?
 -# 	= link_to 'Edit', edit_post_path(@post)

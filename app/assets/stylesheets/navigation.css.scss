@@ -170,13 +170,13 @@
 
 .tabs-style-underline nav a {
 	padding: 0.25em 0 0.5em;
-	border-left: 1px solid #e7ecea;
+	border-left: 1px solid $semi-hidden-grey;
 	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
 }
 
 .tabs-style-underline nav li:last-child a {
-	border-right: 1px solid #e7ecea;
+	border-right: 1px solid $semi-hidden-grey;
 }
 
 .tabs-style-underline nav li a::after {

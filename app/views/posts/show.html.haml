@@ -21,11 +21,11 @@
 .displayable
   =raw @post.content
 
-  %p
+  %p.tags
     Tags:
     = @post.tag_list
-
-- if user_signed_in? and current_user.id = @post.user.id or user_signed_in? and current_user.admin?
-  = link_to 'Edit', edit_post_path(@post)
-  \|
-  = link_to 'Back', posts_path
+  .edit-post
+    - if user_signed_in? and current_user.id = @post.user.id or user_signed_in? and current_user.admin?
+      = link_to edit_post_path(@post) do
+        Edit post 
+        .icon.pe-7s-note

@@ -70,3 +70,22 @@ input#post_background {
 #nprogress .peg {
   box-shadow: 0 0 10px $primary-grey, 0 0 5px $primary-grey;
 }
+
+// BUTTONS
+
+.secondary-button {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  border-radius: 4px;
+  -webkit-user-select: none;
+}
