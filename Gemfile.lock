@@ -99,6 +99,8 @@ GEM
     libv8 (3.16.14.7)
     mail (2.6.1)
       mime-types (>= 1.16, < 3)
+    masonry-rails (0.2.4)
+      railties
     medium-editor-rails (1.2.0)
       railties (>= 3.0)
     mime-types (2.4.3)
@@ -214,6 +216,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   letter_opener
+  masonry-rails
   medium-editor-rails
   nprogress-rails
   paperclip (~> 4.2)

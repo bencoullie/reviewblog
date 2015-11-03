@@ -1,49 +1,112 @@
 .container-fluid
 	.row
-		- if @posts.any?
-			- @posts.each_with_index do |post, index|
-				- if index == 0
-					.col-md-12.post-tile
-						.well
-							= link_to post do
-								=image_tag post.background.url(:full)
-								%p= post.title
-								%p= post.subtitle
-								%p
-									= post.reading_time
-									mins
-								.well
+		.grid
+			- if @posts.any?
+				- @posts.each_with_index do |post, index|
+					- if index == 0
+						.grid-item.primary-item
+							.well
+								= link_to post do
+									=image_tag post.background.url(:full)
+									%p= post.title
+									%p= post.subtitle
 									%p
-										written by:
-										= link_to post.user do
-											= post.user.email
-										on
-										= post.created_at.strftime('%B %Y')
-										%br
-										= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
-				- else
-					.col-md-3.post-tile
-						.well
-							= link_to post do
-								=image_tag post.background.url(:tile)
-								%p= post.title
-								%p= post.subtitle
-								%p= post.content
-								%p
-									= post.reading_time
-									mins
-								.well
+										= post.reading_time
+										mins
+									.well
+										%p
+											written by:
+											= link_to post.user do
+												= post.user.email
+											on
+											= post.created_at.strftime('%B %Y')
+											%br
+											= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+					- elsif index % 3 == 0
+						.grid-item
+							.well
+								= link_to post do
+									=image_tag post.background.url(:tall)
+									%p= post.title
+									%p= post.subtitle
 									%p
-										written by:
-										= link_to post.user do
-											= post.user.email
-										on
-										= post.created_at.strftime('%B %Y')
-										%br
-										= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
-		- else
-			%h1 No posts
+										= post.reading_time
+										mins
+									.well
+										%p
+											written by:
+											= link_to post.user do
+												= post.user.email
+											on
+											= post.created_at.strftime('%B %Y')
+											%br
+											= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+					- else
+						.grid-item
+							.well
+								= link_to post do
+									=image_tag post.background.url(:tile)
+									%p= post.title
+									%p= post.subtitle
+									%p
+										= post.reading_time
+										mins
+									.well
+										%p
+											written by:
+											= link_to post.user do
+												= post.user.email
+											on
+											= post.created_at.strftime('%B %Y')
+											%br
+											= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
 
-		#tag_cloud
-			- tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class|
-				= link_to tag.name, tag_path(tag.name), class: css_class
+
+
+		-# - if @posts.any?
+		-# 	- @posts.each_with_index do |post, index|
+		-# 		- if index == 0
+		-# 			.col-md-12.post-tile
+						-# .well
+						-# 	= link_to post do
+						-# 		=image_tag post.background.url(:full)
+						-# 		%p= post.title
+						-# 		%p= post.subtitle
+						-# 		%p
+						-# 			= post.reading_time
+						-# 			mins
+						-# 		.well
+						-# 			%p
+						-# 				written by:
+						-# 				= link_to post.user do
+						-# 					= post.user.email
+						-# 				on
+						-# 				= post.created_at.strftime('%B %Y')
+						-# 				%br
+						-# 				= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+		-# 		- else
+		-# 			.col-md-3.post-tile
+		-# 				.well
+		-# 					= link_to post do
+		-# 						=image_tag post.background.url(:tile)
+		-# 						%p= post.title
+		-# 						%p= post.subtitle
+		-# 						%p= post.content
+		-# 						%p
+		-# 							= post.reading_time
+		-# 							mins
+		-# 						.well
+		-# 							%p
+		-# 								written by:
+		-# 								= link_to post.user do
+		-# 									= post.user.email
+		-# 								on
+		-# 								= post.created_at.strftime('%B %Y')
+		-# 								%br
+		-# 								= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+		-# - else
+		-# 	%h1 No posts
+		-#
+		-# #tag_cloud
+		-# 	- tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class|
+		-# 		= link_to tag.name, tag_path(tag.name), class: css_class

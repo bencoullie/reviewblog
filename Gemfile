@@ -48,6 +48,9 @@ gem 'acts-as-taggable-on', '~> 3.4'
 # FONT AWESOME ICONS
 gem "font-awesome-rails"
 
+#MASONRY
+gem 'masonry-rails'
+
 # DEVELOPMENT AND TESTS ONLY
 group :development, :test do
 
@@ -65,5 +68,5 @@ end
 group :production do
 
   gem 'rails_12factor'
-  
+
 end

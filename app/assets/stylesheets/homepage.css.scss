@@ -1,6 +1,25 @@
-.post-tile {
+// MASONRY
+.grid {
+  width: 1600px;
+  margin: 0 auto;
+}
+
+.grid-item {
+  width: 385px;
+  margin: 0;
+  float: left;
+  margin: 10px 0;
+
+  .well {
+    margin: 0;
+  }
+
   img {
     width: 100%;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
   }
+}
+
+.grid-item.primary-item {
+  width: 100%;
 }
