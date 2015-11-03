@@ -1,26 +1,48 @@
-.container
+.container-fluid
 	.row
-		.icon-thumbs-up-alt
-		.col-md-12
-			- if @posts.any?
-				- @posts.each do |post|
-					.well
-						%p= post.title
-						%p= post.content
-						%p
-							= post.reading_time
-							mins
+		- if @posts.any?
+			- @posts.each_with_index do |post, index|
+				- if index == 0
+					.col-md-12.post-tile
 						.well
-							%p
-								written by:
-								= link_to post.user do
-									= post.user.email
-								on
-								= post.created_at.strftime('%B %Y')
-								%br
-								= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
-			- else
-				%h1 No posts
+							= link_to post do
+								=image_tag post.background.url(:full)
+								%p= post.title
+								%p= post.subtitle
+								%p
+									= post.reading_time
+									mins
+								.well
+									%p
+										written by:
+										= link_to post.user do
+											= post.user.email
+										on
+										= post.created_at.strftime('%B %Y')
+										%br
+										= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+				- else
+					.col-md-3.post-tile
+						.well
+							= link_to post do
+								=image_tag post.background.url(:tile)
+								%p= post.title
+								%p= post.subtitle
+								%p= post.content
+								%p
+									= post.reading_time
+									mins
+								.well
+									%p
+										written by:
+										= link_to post.user do
+											= post.user.email
+										on
+										= post.created_at.strftime('%B %Y')
+										%br
+										= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+		- else
+			%h1 No posts
 
 		#tag_cloud
 			- tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class|
